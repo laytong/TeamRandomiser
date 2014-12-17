@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Team Randomiser</string>
+    <string name="generate_team_btn_msg">Generate\nTeam</string>
+    <string name="manage_players_btn_msg">Manage\nPlayers</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_manage_players">ManagePlayers</string>
+    <string name="add_player_btn_msg">Add Player</string>
+
+</resources>
