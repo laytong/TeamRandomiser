@@ -10,13 +10,10 @@ import android.widget.CheckedTextView;
 import java.util.ArrayList;
 import java.util.SortedMap;
 
-/**
- * Created by LaytonG on 07/11/2014.
- */
-public class StringBoolTreeMapAdapter extends BaseAdapter {
-    ArrayList<SortedMap<String, Boolean>> list;
-    Context context;
-    LayoutInflater myInflater;
+class StringBoolTreeMapAdapter extends BaseAdapter {
+    private final ArrayList<SortedMap<String, Boolean>> list;
+    private final Context context;
+    private final LayoutInflater myInflater;
 
     public StringBoolTreeMapAdapter(ArrayList<SortedMap<String,Boolean>> list, Context context){
         this.context = context;

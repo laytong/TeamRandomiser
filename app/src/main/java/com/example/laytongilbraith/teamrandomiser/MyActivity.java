@@ -20,12 +20,12 @@ import java.util.TreeMap;
 
 public class MyActivity extends Activity {
 
-    static final int NEW_TEAM_LIST = 1;
-    ArrayList<SortedMap<String, Boolean>> players;
-    ArrayList<String> generatedTeam;
-    StringBoolTreeMapAdapter currentPlayerListAdapter;
-    StringArrayListAdapter generatedPlayerListAdapter;
-    Random random;
+    private static final int NEW_TEAM_LIST = 1;
+    private ArrayList<SortedMap<String, Boolean>> players;
+    private ArrayList<String> generatedTeam;
+    private StringBoolTreeMapAdapter currentPlayerListAdapter;
+    private StringArrayListAdapter generatedPlayerListAdapter;
+    private Random random;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,13 +79,10 @@ public class MyActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 
-    public void generateTeam() {
+    void generateTeam() {
         if(players.isEmpty()){
             Toast toast = Toast.makeText(this, "Try adding some players. . .", Toast.LENGTH_SHORT);
             toast.show();
@@ -123,7 +120,7 @@ public class MyActivity extends Activity {
                 players.clear();
                 for (int i = 0; i < newList.size(); i++) {
                     //Required because SortedMaps passed between activities turn into HashMaps. WHY GOOGLE WHY?!!!!!
-                    SortedMap<String, Boolean> player = new TreeMap<String, Boolean>((Map<String, Boolean>) newList.get(i));
+                    SortedMap<String, Boolean> player = new TreeMap<String, Boolean>(newList.get(i));
                     players.add(player);
                 }
                 currentPlayerListAdapter.notifyDataSetChanged();

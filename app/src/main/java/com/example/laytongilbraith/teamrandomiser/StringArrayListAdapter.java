@@ -9,13 +9,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by Layton.Gilbraith on 07/11/2014.
- */
-public class StringArrayListAdapter extends BaseAdapter {
-    ArrayList<String> list;
-    Context context;
-    LayoutInflater myInflater;
+class StringArrayListAdapter extends BaseAdapter {
+    private final ArrayList<String> list;
+    private final Context context;
+    private final LayoutInflater myInflater;
 
     public StringArrayListAdapter(ArrayList<String> list, Context context) {
         this.context = context;

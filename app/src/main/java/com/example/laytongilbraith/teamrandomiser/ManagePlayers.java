@@ -13,17 +13,16 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
 
 public class ManagePlayers extends Activity {
 
-    Button addPlayerBtn;
-    ArrayList<SortedMap<String, Boolean>> players;
-    StringBoolTreeMapAdapter playerArrayAdapter;
-    Intent returnIntent;
+    private Button addPlayerBtn;
+    private ArrayList<SortedMap<String, Boolean>> players;
+    private StringBoolTreeMapAdapter playerArrayAdapter;
+    private Intent returnIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +39,7 @@ public class ManagePlayers extends Activity {
         }
         players.clear();
         for (int i = 0; i < newPlayerList.size(); i++) {
-            SortedMap<String, Boolean> player = new TreeMap<String, Boolean>((Map<String, Boolean>) newPlayerList.get(i));
+            SortedMap<String, Boolean> player = new TreeMap<String, Boolean>(newPlayerList.get(i));
             players.add(player);
         }
 
@@ -101,7 +100,7 @@ public class ManagePlayers extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void addPlayer() {
+    void addPlayer() {
         EditText playerNameEditText = (EditText) findViewById(R.id.new_player_name);
         String playerName = playerNameEditText.getText().toString();
         if (playerName == null || playerName.isEmpty()) {

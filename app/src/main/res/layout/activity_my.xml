@@ -8,7 +8,7 @@
         android:layout_width="0dp"
         android:layout_height="fill_parent"
         android:layout_weight="0.4"
-        android:id="@+id/current_players"></ListView>
+        android:id="@+id/current_players"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -34,6 +34,6 @@
         android:layout_width="0dp"
         android:layout_height="fill_parent"
         android:layout_weight="0.4"
-        android:id="@+id/generated_players"></ListView>
+        android:id="@+id/generated_players"/>
 
 </LinearLayout>
